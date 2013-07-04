@@ -1,0 +1,44 @@
+ 1. The metric `activity' used by solvers don't seem to correlate well with
+the `degree' (again I don't know which degree -- in or out and average or
+min or max).
+
+2. I think the average degree seems to correlate with the runtime to a
+large extent (except for a bump in one range).
+
+Things to do:
+As `degree' is not a one number, the following are possible refinements:
+a) Use minimum degree. For example, compute the metric -- the number of
+variables with both in and out degree at least 1.
+
+b) Better metric is -- number of variables forced by the assignment of one
+variable (true or false will give different numbers). Again this is also a
+vector, we can store the number of variables that force at least one other
+variable (whether assigned true or false).
+
+c) Repeat the experiment between degrees and runtime by increasing the
+number of variables (to a few thousand) especially for high degrees.
+
+The theoretical explanation of high degree affecting the runtime is below.
+
+Venkatesh
+
+> I knew you were away, but I was hoping to meet with others yesterday.
+>
+> Anyway, I thought of the following concrete theoretical way of capturing
+> the progress based on the degree and how lack of high degree vertices
+> after some branching affects the progress. Just wanted to capture before I
+> forget.
+>
+> Let's say that the solver gets a variable with degree d (at least 1) for k
+> of the steps, after which it is left with only degree 0 vertices.
+>
+> Then after k steps, there are 2^k subproblems for the algorithm, and
+> (d+1)k variables have been removed (the variable to be branched on and the
+> d variables that were implied, at each branch).
+>
+> So the overall run time is
+>
+> 2^k 2^{n - (d+1)k} = 2^{n-dk} (compared to 2^n for normal algorithm).
+>
+> So if k (the number of high degree vertices branched) and d (the degree)
+> are large, then the algorithm performs very well.

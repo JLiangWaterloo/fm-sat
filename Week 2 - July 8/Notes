@@ -1,0 +1,5 @@
+1. Experiments should be done against time (ie. time as the y-axis).
+2. Averaging degree/propagations is not the way to go. Consider using a threshold instead (ie. the number of variables that have at least k in/out degree or the number of variables that propagated at least k other variables).
+
+A. Do the 3 items from Venkatesh's email.
+B. The randomized feature models consist of random 2Sat + 3Sat. Hypothesis: there exists a feature model such that the 2Sat + 3Sat is significantly harder to solve than the 3Sat part alone.

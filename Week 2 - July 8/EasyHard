@@ -1,0 +1,9 @@
+Definition:
+    Easy <= 1 sec
+    Hard >= 60 sec
+    
+FM = 2Sat + 3Sat
+    9.25% Easy (89% Sat)
+    16.66% Hard (59% Sat)
+CTC = 3Sat
+    100% Easy (100% Sat)

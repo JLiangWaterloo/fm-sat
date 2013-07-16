@@ -1,0 +1,5 @@
+1. The feature tree (ie. the 2Sat part) does not necessarily make the problem harder. Adding the tree can change the problem from easy to hard.
+2. The interesting problems are where the 3Sat is hard but the 2Sat + 3Sat is easy and BOTH are satisfiable.
+
+A. Hypothesis: there exists a 3Sat that is satisfiable and hard and adding the 2Sat tree is satisfiable and easy.
+B. Run the real world models, and compare the runtime after dropping the 2Sat part.
